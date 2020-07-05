@@ -49,7 +49,7 @@ const app = {
         const repoLink = document.createElement('a');
         repoLink.className ="github";
         repoLink.innerText = "Repo GitHub";
-        repoLink.href = "https://ismael2m.fr";
+        repoLink.href = "https://github.com/ismael2m/morpion";
         morpion.className = "morpion";
         root.appendChild(morpion)
         let boxId = 0;
