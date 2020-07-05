@@ -15,11 +15,24 @@ body {
     position: relative;
 }
 
+.score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    margin: 2rem auto 0;
+}
+
+.score-num {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.5rem;
+}
+
 .github {
     display: block;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    margin: 4rem auto 0;
+    margin: 1rem auto 0;
     width: 200px;
     color: #000;
     background: rgb(243, 243, 243);
@@ -63,7 +76,7 @@ body {
 .title {
     font-family: 'Bangers', sans-serif;
     font-size: 3.8rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     color: white;
     text-shadow: 4px 4px  #000;
     text-align: center;

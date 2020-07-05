@@ -36,6 +36,11 @@ const app = {
         playerO: [],
     },
 
+    score: {
+        playerX : 0,
+        playerO: 0,
+    },
+
     /**
      * @function createMorpion()
      * @desc : Méthode qui créé la grille du morpion
@@ -46,11 +51,22 @@ const app = {
 
         const root =  document.getElementById('root');
         const morpion = document.createElement('div');
+        const score = document.createElement('div');
+        const scoreX = document.createElement('p');
+        const scoreY = document.createElement('p');
         const repoLink = document.createElement('a');
         repoLink.className ="github";
         repoLink.innerText = "Repo GitHub";
         repoLink.href = "https://github.com/ismael2m/morpion";
         morpion.className = "morpion";
+        score.className = "score";
+        scoreX.className = "score-num";
+        scoreY.className = "score-num";
+        scoreX.innerText = `Joueur X : ${app.score.playerX}`;
+        scoreY.innerText = `Joueur O : ${app.score.playerO}`;
+
+        score.appendChild(scoreX);
+        score.appendChild(scoreY);
         root.appendChild(morpion)
         let boxId = 0;
         let caseNb = 0;
@@ -70,6 +86,7 @@ const app = {
             }
         }
 
+        root.appendChild(score);
         root.appendChild(repoLink);
     },
 
@@ -86,6 +103,12 @@ const app = {
             winMess.innerText = "Match Nul!";
         } else {
             winMess.innerText = `le joueur ${symbole} a gagné!`;
+
+            if(symbole === 'X') {
+                app.score.playerX +=1;
+            } else {
+                app.score.playerO +=1;
+            }
         }
         btnGroup.className = "win-buttons";
         replay.className = "win-buttons-btn";
@@ -102,8 +125,10 @@ const app = {
     reload : () => {
         const morpion = document.querySelector('.morpion');
         const repoLink = document.querySelector('.github');
+        const score = document.querySelector('.score');
         const root =  document.getElementById('root');
         root.removeChild(morpion);
+        root.removeChild(score);
         root.removeChild(repoLink)
         let { playerX, playerO } = app.players;
         app.players.playerO = [];
