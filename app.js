@@ -36,6 +36,7 @@ const app = {
         playerO: [],
     },
 
+    // Objet qui stockent les scores de chaque joueur tout au long de la partie
     score: {
         playerX : 0,
         playerO: 0,
@@ -55,19 +56,21 @@ const app = {
         const scoreX = document.createElement('p');
         const scoreY = document.createElement('p');
         const repoLink = document.createElement('a');
-        repoLink.className ="github";
-        repoLink.innerText = "Repo GitHub";
-        repoLink.href = "https://github.com/ismael2m/morpion";
+
         morpion.className = "morpion";
         score.className = "score";
         scoreX.className = "score-num";
         scoreY.className = "score-num";
         scoreX.innerText = `Joueur X : ${app.score.playerX}`;
         scoreY.innerText = `Joueur O : ${app.score.playerO}`;
+        repoLink.className ="github";
+        repoLink.innerText = "Repo GitHub";
+        repoLink.href = "https://github.com/ismael2m/morpion";
 
         score.appendChild(scoreX);
         score.appendChild(scoreY);
-        root.appendChild(morpion)
+        root.appendChild(morpion);
+
         let boxId = 0;
         let caseNb = 0;
 
@@ -96,6 +99,7 @@ const app = {
         const btnGroup = document.createElement('div');
         const replay = document.createElement('button');
         const morpion = document.querySelector('.morpion');
+
         winDiv.className = "win";
         winMess.className = "win-message";
 
@@ -110,6 +114,7 @@ const app = {
                 app.score.playerO +=1;
             }
         }
+
         btnGroup.className = "win-buttons";
         replay.className = "win-buttons-btn";
         replay.innerText = "Rejouer";
@@ -119,7 +124,6 @@ const app = {
         winDiv.appendChild(winMess);
         winDiv.appendChild(btnGroup);
         morpion.appendChild(winDiv);
-
     },
 
     reload : () => {
@@ -127,9 +131,11 @@ const app = {
         const repoLink = document.querySelector('.github');
         const score = document.querySelector('.score');
         const root =  document.getElementById('root');
+
         root.removeChild(morpion);
         root.removeChild(score);
         root.removeChild(repoLink)
+
         let { playerX, playerO } = app.players;
         app.players.playerO = [];
         app.players.playerX = [];
