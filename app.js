@@ -30,13 +30,13 @@ const app = {
         playerX: true,
     },
 
-    // Objet qui stockent les réponses de chaque joueur tout au long de la partie
+    // Objet qui stocke les réponses de chaque joueur tout au long de la partie
     players: {
         playerX : [],
         playerO: [],
     },
 
-    // Objet qui stockent les scores de chaque joueur tout au long de la partie
+    // Objet qui stocke les scores de chaque joueur tout au long de la partie
     score: {
         playerX : 0,
         playerO: 0,
